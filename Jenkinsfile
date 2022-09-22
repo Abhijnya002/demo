@@ -1,14 +1,20 @@
+def gv
+
 pipeline {
     agent none
     stages {
-        stage("Stage 1") {
+        stage("init") {
             steps {
-                echo "Hello World ! from stage 1"
+                script{
+                    gv = load "script.groovy"
+                }
             }
         }
-        stage("Stage 2") {
+        stage("build") {
             steps {
-                echo "Hello World ! from stage 2"
+                script{
+                    gv.buildApp()
+                }
             }
         }
     }
