@@ -13,7 +13,10 @@ pipeline {
         stage("build") {
             steps {
                 script{
-                    gv.buildApp()
+                    gv.myscript('TEST') {
+                        def y = "My variable"
+                        print y
+                    }
                 }
             }
         }
