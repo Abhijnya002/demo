@@ -3,7 +3,7 @@ def gv
 pipeline {
     agent any
     stages {
-        stage("init") {
+        stage("Checkout") {
             steps {
                 script{
                     gv = load "script.groovy"
